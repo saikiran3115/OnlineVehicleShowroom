@@ -1,0 +1,48 @@
+<div class="banner">
+  <div class="content">
+      <h1 class="mb-5">Book your Car <br/> With a Click.</h1>
+      <a routerLink="register">Register Now<i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- step  -->
+<div class="container mt-5 mb-5">
+  <h1 class="text-center">Buy the <span class="highlight">best Car</span> suitable for you!</h1>
+  <div class="row mt-5">
+      <!-- one  -->
+      <div class="col-lg-4 mt-2">
+          <div class="stepBox">
+              <h1>1</h1>
+              <p>select Car</p>
+          </div>
+      </div>
+<!-- two -->
+      <div class="col-lg-4 mt-2">
+          <div class="stepBox">
+              <h1>2</h1>
+              <p>fill the details</p>
+          </div>
+      </div>
+      <!-- three  -->
+      <div class="col-lg-4 mt-2">
+          <div class="stepBox">
+              <h1>3</h1>
+              <p>Visit showroom to pick the Car</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- foodbox  -->
+<div class="container mt-4 mb-4">
+  <h1 class="text-center">Customer's <span class="highlight">Favourite Cars</span></h1>
+  <div class="row">
+      <div class="col-lg-3 mt-3" *ngFor="let fd of carData;index as i">
+          <div class="carbox" *ngIf="i<=3">
+              <img src="{{fd.carImg}}" />
+              <h1>{{fd.carName}}</h1>
+              <p>{{fd.carPrice | currency:'INR'}}</p>
+          </div>
+      </div>
+  </div>
+  <a routerLink="menu" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
+</div>
