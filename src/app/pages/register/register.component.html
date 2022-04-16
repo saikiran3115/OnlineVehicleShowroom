@@ -24,7 +24,6 @@
               <div class="mb-2">
                 <label>Gender</label>
                 <select class="form-select" name="gender" [(ngModel)]="model.gender" required #Gender="ngModel">
-                  <option disabled selected value="">Please select</option>
                   <option *ngFor="let gender of gender" [ngValue]="gender"> {{gender}} </option>
                 </select>
               </div>
@@ -128,7 +127,7 @@
 
               <!-- button -->
               <div class="mb-2">
-                <button routerLink="login" type="submit" class="btn btn-outline-dark">Register</button>
+                <button routerLink="login" type="submit" (click)="onregisterclick()"class="btn btn-outline-dark">Register</button>
               </div>
 
             </form>

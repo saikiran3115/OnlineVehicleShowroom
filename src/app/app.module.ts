@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { ShowroomsComponent } from './pages/showrooms/showrooms.component';
 import { ShowroompageComponent } from './pages/showroompage/showroompage.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { DealerloginComponent } from './pages/dealerlogin/dealerlogin.component';
+import { DealermenuComponent } from './pages/dealermenu/dealermenu.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { LoginComponent } from './pages/login/login.component';
     ShowroompageComponent,
     RegisterComponent,
     LoginComponent,
+    DealerloginComponent,
+    DealermenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

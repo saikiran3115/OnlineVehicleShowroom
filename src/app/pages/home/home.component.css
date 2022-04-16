@@ -76,6 +76,11 @@
     margin-top: 20px;
     font-weight: bold;
 }
+
+.carbox:hover{
+  transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
 .viewmorebtn
 {
     text-decoration: none;
@@ -103,6 +108,11 @@
     font-size: 18px;
     margin-top: 20px;
     font-weight: bold;
+}
+
+.showroombox:hover{
+  transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 .viewmorebtn
 {
