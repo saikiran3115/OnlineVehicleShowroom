@@ -1,0 +1,20 @@
+<div class="container mt-5 mb-5">
+
+  <div class="row">
+
+      <div class="col-lg-4" *ngFor="let sd of showroomData">
+
+          <div class="showroombox mt-3 mb-3">
+              <img src="{{sd.showroomImg}}">
+              <h1>{{sd.showroomName}}</h1>
+              <h1>{{sd.showroomDealerID}}</h1>
+              <p>{{sd.showroomcontact}}</p>
+              <p>{{sd.showroomAddress}}</p>
+              <br/>
+              <a class="viewmorebtn" [routerLink]="['/showrooms',sd.id]">Know more <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+      </div>
+  </div>
+
+</div>

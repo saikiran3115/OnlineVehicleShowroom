@@ -1,0 +1,140 @@
+<div class="container" style="padding-top:60px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card-group">
+        <div class="card p-4">
+          <div class="card-body">
+            <h1 style="text-align:center">Register</h1>
+            <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+
+              <!-- CustomerName -->
+              <div class="mb-2">
+                <label>Customer Name</label>
+                <input type="text" class="form-control" name="customerName" [(ngModel)]="model.customerName" #name="ngModel"
+                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':customerForm.submitted && name.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (name.touched && name.invalid)">
+                <div class="text-danger" *ngIf="name.errors?.['required']">customer Name is required</div>
+                <div class="text-danger" *ngIf="name.errors?.['minlength']">customer Name should be minimum 3 characters</div>
+              </div>
+
+              <!-- Gender -->
+              <div class="mb-2">
+                <label>Gender</label>
+                <select class="form-select" name="gender" [(ngModel)]="model.gender" required #Gender="ngModel">
+                  <option disabled selected value="">Please select</option>
+                  <option *ngFor="let gender of gender" [ngValue]="gender"> {{gender}} </option>
+                </select>
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted ||(Gender.touched && Gender.invalid)">
+                <div class="text-danger" *ngIf="Gender.errors?.['required']">Gender is required</div>
+              </div>
+
+              <!-- ContactNo -->
+              <div class="mb-2">
+                <label>ContactNo</label>
+                <input type="text" class="form-control" name="contactNo" [(ngModel)]="model.contactNo" #contactNo="ngModel"
+                  autocomplete="off" required pattern="[7-9]{1}[0-9]{9}" [ngClass]="{'is-invalid':customerForm.submitted && contactNo.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (contactNo.touched && contactNo.invalid)">
+                <div class="text-danger" *ngIf="contactNo.errors?.['required']">contactNo is required</div>
+                <div class="text-danger" *ngIf="contactNo.errors?.['pattern']">Invalid contactNo</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-2">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+                  autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'is-invalid':customerForm.submitted && email.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (email.touched && email.invalid)">
+                <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
+                <div class="text-danger" *ngIf="email.errors?.['pattern']">Invalid Email</div>
+              </div>
+
+              <!-- Address -->
+              <div class="mb-2">
+              <label>Address</label>
+              <textarea class="form-control" name="address" [(ngModel)]="model.address" required
+              #address="ngModel" [ngClass]="{'is-invalid':customerForm.submitted && address.invalid}"></textarea>
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted ||(address.touched && address.invalid)">
+              <div class="text-danger" *ngIf="address.errors?.['required']">Address is required</div>
+              </div>
+
+              <!-- City -->
+              <div class="mb-2">
+                <label>City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel"
+                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':customerForm.submitted && city.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (city.touched && city.invalid)">
+                <div class="text-danger" *ngIf="city.errors?.['required']">City is required</div>
+                <div class="text-danger" *ngIf="city.errors?.['minlength']">City should be minimum 3 characters</div>
+              </div>
+
+              <!-- state -->
+
+              <div class="mb-2">
+                <label>State</label>
+                <select class="form-select" name="state" [(ngModel)]="model.state" required #state="ngModel">
+                  <option disabled selected value="">Please select</option>
+                  <option *ngFor="let state of states" [ngValue]="state"> {{state}} </option>
+                </select>
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted ||(Gender.touched && Gender.invalid)">
+                <div class="text-danger" *ngIf="Gender.errors?.['required']">Gender is required</div>
+              </div>
+
+              <!-- Pincode -->
+              <div class="mb-2">
+                <label>Pincode</label>
+                <input type="text" class="form-control" name="pincode" [(ngModel)]="model.pincode" #pincode="ngModel"
+                  autocomplete="off" required pattern="^[1-9][0-9]{5}$" [ngClass]="{'is-invalid':customerForm.submitted && pincode.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (pincode.touched && pincode.invalid)">
+                <div class="text-danger" *ngIf="pincode.errors?.['required']">Pincode is required</div>
+                <div class="text-danger" *ngIf="pincode.errors?.['pattern']">Invalid Pincode</div>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-2">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+                  autocomplete="off" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [ngClass]="{'is-invalid':customerForm.submitted && password.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="customerForm.submitted || (password.touched && password.invalid)">
+                <div class="text-danger" *ngIf="password.errors?.['required']">password is required</div>
+                <div class="text-danger" *ngIf="password.errors?.['pattern']">Invalid password</div>
+              </div>
+
+              <!-- button -->
+              <div class="mb-2">
+                <button routerLink="login" type="submit" class="btn btn-outline-dark">Register</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

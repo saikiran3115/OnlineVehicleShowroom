@@ -1,0 +1,46 @@
+<div class="container" style="padding-top:60px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card-group">
+        <div class="card p-4">
+          <div class="card-body">
+            <h1 style="text-align:center">Login</h1>
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+              <!-- Email -->
+              <div class="mb-2">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+                  autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'is-invalid':loginForm.submitted && email.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="loginForm.submitted || (email.touched && email.invalid)">
+                <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
+                <div class="text-danger" *ngIf="email.errors?.['pattern']">Invalid Email</div>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-2">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+                  autocomplete="off" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [ngClass]="{'is-invalid':loginForm.submitted && password.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="loginForm.submitted || (password.touched && password.invalid)">
+                <div class="text-danger" *ngIf="password.errors?.['required']">password is required</div>
+                <div class="text-danger" *ngIf="password.errors?.['pattern']">Invalid password</div>
+              </div>
+
+              <!-- button -->
+              <div class="mb-2">
+                <button type="submit" class="btn btn-outline-dark">Login</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

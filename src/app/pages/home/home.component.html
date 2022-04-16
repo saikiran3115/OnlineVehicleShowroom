@@ -32,17 +32,33 @@
   </div>
 </div>
 
-<!-- foodbox  -->
+<!-- Carbox  -->
 <div class="container mt-4 mb-4">
   <h1 class="text-center">Customer's <span class="highlight">Favourite Cars</span></h1>
   <div class="row">
-      <div class="col-lg-3 mt-3" *ngFor="let fd of carData;index as i">
+      <div class="col-lg-3 mt-3" *ngFor="let vd of vehicleData;index as i">
           <div class="carbox" *ngIf="i<=3">
-              <img src="{{fd.carImg}}" />
-              <h1>{{fd.carName}}</h1>
-              <p>{{fd.carPrice | currency:'INR'}}</p>
+              <img src="{{vd.vehicleImg}}" />
+              <h1>{{vd.vehicleName}}</h1>
+              <h1>{{vd.vehicleModel}}</h1>
+              <p>{{vd.vehicleCost | currency:'INR'}}</p>
           </div>
       </div>
   </div>
   <a routerLink="menu" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
+</div>
+
+<!-- Showroombox -->
+
+<div class="container mt-4 mb-4">
+  <h1 class="text-center">Top <span class="highlight">Showrooms Near you</span></h1>
+  <div class="row">
+      <div class="col-lg-3 mt-3" *ngFor="let sd of showroomData;index as i">
+          <div class="showroombox" *ngIf="i<=3">
+              <img src="{{sd.showroomImg}}" />
+              <h1>{{sd.showroomName}}</h1>
+          </div>
+      </div>
+  </div>
+  <a routerLink="showrooms" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
 </div>

@@ -9,9 +9,9 @@ import { OrderDetailsService } from 'src/app/services/order-details.service';
 export class MenuComponent implements OnInit {
 
   constructor(private service:OrderDetailsService) { }
-  carData:any;
+  vehicleData:any;
   ngOnInit(): void {
-    this.carData = this.service.carDetails;
+    this.vehicleData = this.service.vehicleDetails;
   }
 
 }

@@ -1,0 +1,21 @@
+<div class="container mt-5 mb-5">
+
+  <div class="row">
+
+      <div class="col-lg-6" *ngIf="showroomData">
+          <a routerLink="../../showrooms" class="btn btn-sm btn-dark mb-3 ">Back</a>
+          <img src="{{showroomData[0].showroomImg}}" width="100%"/>
+          <h1 class="mt-3">{{showroomData[0].showroomName}}</h1>
+      </div>
+
+      <div class="col-lg-6 col-12">
+        <br>
+        <br>
+        <h1>Details of the Showroom</h1>
+      <p>{{showroomData[0].showroomDealerID}}</p>
+      <p>{{showroomData[0].showroomcontact}}</p>
+      <p>{{showroomData[0].showroomAddress}}</p>
+    </div>
+
+  </div>
+
