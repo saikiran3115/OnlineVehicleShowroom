@@ -34,7 +34,7 @@
 
               <!-- button -->
               <div class="mb-2">
-                <button type="submit" (click)="onloginclick()" class="btn btn-outline-dark">Login</button>
+                <button type="submit" [disabled]="!loginForm.valid" (click)="onloginclick()" class="btn btn-outline-dark">Login</button>
               </div>
 
             </form>

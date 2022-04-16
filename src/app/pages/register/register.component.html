@@ -95,8 +95,8 @@
               </div>
 
               <!-- Validation -->
-              <div *ngIf="customerForm.submitted ||(Gender.touched && Gender.invalid)">
-                <div class="text-danger" *ngIf="Gender.errors?.['required']">Gender is required</div>
+              <div *ngIf="customerForm.submitted ||(state.touched && state.invalid)">
+                <div class="text-danger" *ngIf="state.errors?.['required']">State is required</div>
               </div>
 
               <!-- Pincode -->
@@ -127,7 +127,7 @@
 
               <!-- button -->
               <div class="mb-2">
-                <button routerLink="login" type="submit" (click)="onregisterclick()"class="btn btn-outline-dark">Register</button>
+                <button routerLink="login" [disabled]="!customerForm.valid" type="submit" (click)="onregisterclick()"class="btn btn-outline-dark">Register</button>
               </div>
 
             </form>

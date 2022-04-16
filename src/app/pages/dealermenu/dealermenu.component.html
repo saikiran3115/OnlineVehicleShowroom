@@ -1,78 +1,24 @@
-<div class="container" style="padding-top:60px;">
+<div class="container mt-5 mb-5">
+
   <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="card-group">
-        <div class="card p-4">
-          <div class="card-body">
-            <h1 style="text-align:center">Register</h1>
-            <form #vehicleForm="ngForm" (ngSubmit)="onSubmit(vehicleForm)">
 
-              <!-- VehicleName -->
-              <div class="mb-2">
-                <label>vehicle Name</label>
-                <input type="text" class="form-control" name="vehicleName" [(ngModel)]="model.vehicleName" #vehiclename="ngModel"
-                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':vehicleForm.submitted && vehiclename.invalid}">
-              </div>
+      <div class="col-lg-4" *ngFor="let vd of vehicleData">
 
-              <!-- Validation -->
-              <div *ngIf="vehicleForm.submitted || (vehiclename.touched && vehiclename.invalid)">
-                <div class="text-danger" *ngIf="vehiclename.errors?.['required']">Vehicle Name is required</div>
-                <div class="text-danger" *ngIf="vehiclename.errors?.['minlength']">Vehicle Name should be minimum 3 characters</div>
-              </div>
-
-              <!-- VehicleModel -->
-              <div class="mb-2">
-                <label>vehicle Model</label>
-                <input type="text" class="form-control" name="vehicleModel" [(ngModel)]="model.vehicleModel" #vehiclemodel="ngModel"
-                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':vehicleForm.submitted && vehiclemodel.invalid}">
-              </div>
-
-              <!-- Validation -->
-              <div *ngIf="vehicleForm.submitted || (vehiclemodel.touched && vehiclemodel.invalid)">
-                <div class="text-danger" *ngIf="vehiclemodel.errors?.['required']">customer Model is required</div>
-                <div class="text-danger" *ngIf="vehiclemodel.errors?.['minlength']">customer Model should be minimum 3 characters</div>
-              </div>
-
-              <!-- UnitPrice -->
-              <div class="mb-2">
-                <label>Cost</label>
-                <input type="text" class="form-control" name="cost" [(ngModel)]="model.cost" required
-                 #cost="ngModel">
-                </div>
-              <!-- Validation -->
-              <div *ngIf="vehicleForm.submitted || (cost.touched && cost.invalid)">
-              <div class="text-danger" *ngIf="cost.errors?.['required']">cost is required</div>
-            </div>
-
-              <!-- Description -->
-              <div class="mb-2">
-              <label>Description</label>
-              <textarea class="form-control" name="address" [(ngModel)]="model.description" required
-              #description="ngModel" [ngClass]="{'is-invalid':vehicleForm.submitted && description.invalid}"></textarea>
-              </div>
-
-             <!-- Gender -->
-             <div class="mb-2">
-              <label>Availability</label>
-              <select class="form-select" name="gender" [(ngModel)]="model.availability" required #Availability="ngModel">
-                <option *ngFor="let availability of availability" [ngValue]="availability"> {{availability}} </option>
-              </select>
-            </div>
-
-            <!-- Validation -->
-            <div *ngIf="vehicleForm.submitted ||(Availability.touched && Availability.invalid)">
-              <div class="text-danger" *ngIf="Availability.errors?.['required']">Gender is required</div>
-            </div>
-
-              <!-- button -->
-              <div class="mb-2">
-                <button routerLink="login" type="submit" (click)="onaddvehicleclick()"class="btn btn-outline-dark">Register</button>
-              </div>
-
-            </form>
+          <div class="carbox mt-3 mb-3">
+              <img src="{{vd.vehicleImg}}">
+              <h1>{{vd.vehicleName}}</h1>
+              <h1>{{vd.vehicleModel}}</h1>
+              <p>{{vd.vehicleDetails}}</p>
+              <h1>{{vd.vehicleAvailablility}}</h1>
+              <p>{{vd.vehicleCost | currency:'INR'}}</p>
+              <br/>
+              <a class="buybtn" routerLink="/dealermenupage">Edit Vehicle Details &nbsp;<i class="bi bi-pencil-square"></i></a>
           </div>
-        </div>
+
       </div>
-    </div>
+
+
+
   </div>
+
 </div>

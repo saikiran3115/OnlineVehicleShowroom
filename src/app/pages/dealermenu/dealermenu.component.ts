@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { vehicle } from 'src/app/models/dealervehicle.model';
 import { Router } from '@angular/router';
+import { OrderDetailsService } from 'src/app/services/order-details.service';
 
 @Component({
   selector: 'app-dealermenu',
@@ -8,23 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./dealermenu.component.css']
 })
 export class DealermenuComponent implements OnInit {
-  model = new vehicle();
 
-  constructor(private router: Router) { }
-
+  constructor(private service:OrderDetailsService) { }
+  vehicleData:any;
   ngOnInit(): void {
-  }
-  onaddvehicleclick(){
-    this.router.navigateByUrl('/menu');
-  }
-  availability = ["Yes","No"];
-
-  onSubmit(vehicle: any) {
-    if (vehicle.valid) {
-      console.log(vehicle.value);
-      console.log(vehicle.value.vehicleName);
-      alert("registered Successfully" + JSON.stringify(vehicle.value, null, 4));
-    }
+    this.vehicleData = this.service.vehicleDetails;
   }
 
 }

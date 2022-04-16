@@ -18,6 +18,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DealerloginComponent } from './pages/dealerlogin/dealerlogin.component';
 import { DealermenuComponent } from './pages/dealermenu/dealermenu.component';
+import { DealermenupageComponent } from './pages/dealermenupage/dealermenupage.component';
+import { DealershowroomsComponent } from './pages/dealershowrooms/dealershowrooms.component';
+import { DealershowroompageComponent } from './pages/dealershowroompage/dealershowroompage.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { DealermenuComponent } from './pages/dealermenu/dealermenu.component';
     LoginComponent,
     DealerloginComponent,
     DealermenuComponent,
+    DealermenupageComponent,
+    DealershowroomsComponent,
+    DealershowroompageComponent,
   ],
   imports: [
     BrowserModule,

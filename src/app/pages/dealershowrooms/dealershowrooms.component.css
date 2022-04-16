@@ -1,21 +1,21 @@
-.carbox
+.showroombox
 {
-    padding: 10px 10px;
+    padding: 10px 5px;
 }
-.carbox img
+.showroombox img
 {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 5px;
 }
-.carbox h1
+.showroombox h1
 {
     font-size: 18px;
     margin-top: 20px;
     font-weight: bold;
 }
-.buybtn
+.viewmorebtn
 {
 
     color: #000;
@@ -24,5 +24,4 @@
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
 }

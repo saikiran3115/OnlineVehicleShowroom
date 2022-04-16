@@ -1,0 +1,113 @@
+<div class="container" style="padding-top:60px;">
+  <div class="row">
+    <div class="mb-2">
+      <button routerLink="/dealershowrooms" class="btn btn-sm btn-dark mb-3 ">Back</button>
+    </div>
+    <div class="col-md-6 mx-auto">
+      <div class="card-group">
+        <div class="card p-4">
+          <div class="card-body">
+            <h1 style="text-align:center">Update Showroom</h1>
+            <form #showroomForm="ngForm" (ngSubmit)="onSubmit(showroomForm)">
+
+              <!-- Showroom Name -->
+              <div class="mb-2">
+                <label>Showroom Name</label>
+                <input type="text" class="form-control" name="showroomName" [(ngModel)]="model.showroomName" #showroomname="ngModel"
+                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':showroomForm.submitted && showroomname.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted || (showroomname.touched && showroomname.invalid)">
+                <div class="text-danger" *ngIf="showroomname.errors?.['required']">showroom Name is required</div>
+                <div class="text-danger" *ngIf="showroomname.errors?.['minlength']">showroom Name should be minimum 3 characters</div>
+              </div>
+
+              <!-- Dealer ID -->
+              <div class="mb-2">
+                <label>Dealer ID</label>
+                <input type="number" class="form-control" name="dealerID" [(ngModel)]="model.dealerID" required #dealerid="ngModel">
+                </div>
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted || (dealerid.touched && dealerid.invalid)">
+              <div class="text-danger" *ngIf="dealerid.errors?.['required']">Dealer ID is required</div>
+            </div>
+
+            <!-- ContactNo -->
+            <div class="mb-2">
+              <label>ContactNo</label>
+              <input type="text" class="form-control" name="contactNo" [(ngModel)]="model.contactNo" #contactNo="ngModel"
+                autocomplete="off" required pattern="[7-9]{1}[0-9]{9}" [ngClass]="{'is-invalid':showroomForm.submitted && contactNo.invalid}">
+            </div>
+
+            <!-- Validation -->
+            <div *ngIf="showroomForm.submitted || (contactNo.touched && contactNo.invalid)">
+              <div class="text-danger" *ngIf="contactNo.errors?.['required']">contactNo is required</div>
+              <div class="text-danger" *ngIf="contactNo.errors?.['pattern']">Invalid contactNo</div>
+            </div>
+
+
+             <!-- Address -->
+             <div class="mb-2">
+              <label>Address</label>
+              <textarea class="form-control" name="address" [(ngModel)]="model.address" required
+              #address="ngModel" [ngClass]="{'is-invalid':showroomForm.submitted && address.invalid}"></textarea>
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted ||(address.touched && address.invalid)">
+              <div class="text-danger" *ngIf="address.errors?.['required']">Address is required</div>
+              </div>
+
+              <!-- City -->
+              <div class="mb-2">
+                <label>City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel"
+                  autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':showroomForm.submitted && city.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted || (city.touched && city.invalid)">
+                <div class="text-danger" *ngIf="city.errors?.['required']">City is required</div>
+                <div class="text-danger" *ngIf="city.errors?.['minlength']">City should be minimum 3 characters</div>
+              </div>
+
+              <!-- state -->
+
+              <div class="mb-2">
+                <label>State</label>
+                <select class="form-select" name="state" [(ngModel)]="model.state" required #state="ngModel">
+                  <option disabled selected value="">Please select</option>
+                  <option *ngFor="let state of states" [ngValue]="state"> {{state}} </option>
+                </select>
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted ||(state.touched && state.invalid)">
+                <div class="text-danger" *ngIf="state.errors?.['required']">State is required</div>
+              </div>
+
+              <!-- Pincode -->
+              <div class="mb-2">
+                <label>Pincode</label>
+                <input type="text" class="form-control" name="pincode" [(ngModel)]="model.pinCode" #pincode="ngModel"
+                  autocomplete="off" required pattern="^[1-9][0-9]{5}$" [ngClass]="{'is-invalid':showroomForm.submitted && pincode.invalid}">
+              </div>
+
+              <!-- Validation -->
+              <div *ngIf="showroomForm.submitted || (pincode.touched && pincode.invalid)">
+                <div class="text-danger" *ngIf="pincode.errors?.['required']">Pincode is required</div>
+                <div class="text-danger" *ngIf="pincode.errors?.['pattern']">Invalid Pincode</div>
+              </div>
+              <!-- button -->
+              <div class="mb-2">
+                <button routerLink="/dealershowrooms" type="submit" [disabled]="!showroomForm.valid" (click)="onaddshowroomclick()"class="btn btn-outline-dark">Update</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

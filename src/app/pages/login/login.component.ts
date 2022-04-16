@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
     }
     onloginclick(){
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('');
   }
     onSubmit(customer: any) {
       if (customer.valid) {
