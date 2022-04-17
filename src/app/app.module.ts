@@ -21,6 +21,7 @@ import { DealermenuComponent } from './pages/dealermenu/dealermenu.component';
 import { DealermenupageComponent } from './pages/dealermenupage/dealermenupage.component';
 import { DealershowroomsComponent } from './pages/dealershowrooms/dealershowrooms.component';
 import { DealershowroompageComponent } from './pages/dealershowroompage/dealershowroompage.component';
+import { AddnewcarComponent } from './pages/addnewcar/addnewcar.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DealershowroompageComponent } from './pages/dealershowroompage/dealersh
     DealermenupageComponent,
     DealershowroomsComponent,
     DealershowroompageComponent,
+    AddnewcarComponent,
   ],
   imports: [
     BrowserModule,

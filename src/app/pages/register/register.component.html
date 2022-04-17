@@ -10,7 +10,7 @@
               <!-- CustomerName -->
               <div class="mb-2">
                 <label>Customer Name</label>
-                <input type="text" class="form-control" name="customerName" [(ngModel)]="model.customerName" #name="ngModel"
+                <input type="text" class="form-control" name="customerName" placeholder="Enter customerName" [(ngModel)]="model.customerName" #name="ngModel"
                   autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':customerForm.submitted && name.invalid}">
               </div>
 
@@ -23,7 +23,7 @@
               <!-- Gender -->
               <div class="mb-2">
                 <label>Gender</label>
-                <select class="form-select" name="gender" [(ngModel)]="model.gender" required #Gender="ngModel">
+                <select class="form-select" name="gender" placeholder="Select Gender" [(ngModel)]="model.gender" required #Gender="ngModel">
                   <option *ngFor="let gender of gender" [ngValue]="gender"> {{gender}} </option>
                 </select>
               </div>
@@ -36,7 +36,7 @@
               <!-- ContactNo -->
               <div class="mb-2">
                 <label>ContactNo</label>
-                <input type="text" class="form-control" name="contactNo" [(ngModel)]="model.contactNo" #contactNo="ngModel"
+                <input type="number" class="form-control" name="contactNo" placeholder="Enter contactNo" [(ngModel)]="model.contactNo" #contactNo="ngModel"
                   autocomplete="off" required pattern="[7-9]{1}[0-9]{9}" [ngClass]="{'is-invalid':customerForm.submitted && contactNo.invalid}">
               </div>
 
@@ -49,7 +49,7 @@
               <!-- Email -->
               <div class="mb-2">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" [(ngModel)]="model.email" #email="ngModel"
                   autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'is-invalid':customerForm.submitted && email.invalid}">
               </div>
 
@@ -62,7 +62,7 @@
               <!-- Address -->
               <div class="mb-2">
               <label>Address</label>
-              <textarea class="form-control" name="address" [(ngModel)]="model.address" required
+              <textarea class="form-control" name="address"  placeholder="Enter Address" [(ngModel)]="model.address" required
               #address="ngModel" [ngClass]="{'is-invalid':customerForm.submitted && address.invalid}"></textarea>
               </div>
 
@@ -74,7 +74,7 @@
               <!-- City -->
               <div class="mb-2">
                 <label>City</label>
-                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel"
+                <input type="text" class="form-control" name="city" placeholder="Enter City" [(ngModel)]="model.city" #city="ngModel"
                   autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':customerForm.submitted && city.invalid}">
               </div>
 
@@ -88,8 +88,7 @@
 
               <div class="mb-2">
                 <label>State</label>
-                <select class="form-select" name="state" [(ngModel)]="model.state" required #state="ngModel">
-                  <option disabled selected value="">Please select</option>
+                <select class="form-select" name="state" placeholder="Select State" [(ngModel)]="model.state" required #state="ngModel">
                   <option *ngFor="let state of states" [ngValue]="state"> {{state}} </option>
                 </select>
               </div>
@@ -102,7 +101,7 @@
               <!-- Pincode -->
               <div class="mb-2">
                 <label>Pincode</label>
-                <input type="text" class="form-control" name="pincode" [(ngModel)]="model.pincode" #pincode="ngModel"
+                <input type="text" class="form-control" name="pincode" placeholder="Enter Pincode" [(ngModel)]="model.pincode" #pincode="ngModel"
                   autocomplete="off" required pattern="^[1-9][0-9]{5}$" [ngClass]="{'is-invalid':customerForm.submitted && pincode.invalid}">
               </div>
 
@@ -112,10 +111,10 @@
                 <div class="text-danger" *ngIf="pincode.errors?.['pattern']">Invalid Pincode</div>
               </div>
 
-              <!-- Password -->
+              <!-- Create Password -->
               <div class="mb-2">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+                <label>Create Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Password" [(ngModel)]="model.password" #password="ngModel"
                   autocomplete="off" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [ngClass]="{'is-invalid':customerForm.submitted && password.invalid}">
               </div>
 

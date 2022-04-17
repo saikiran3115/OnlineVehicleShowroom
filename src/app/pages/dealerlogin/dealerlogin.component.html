@@ -5,11 +5,11 @@
         <div class="card p-4">
           <div class="card-body">
             <h1 style="text-align:center">Login</h1>
-            <form #dealerloginForm="ngForm" (ngSubmit)="onSubmit(dealerloginForm)">
+            <form #dealerloginForm="ngForm">
               <!-- Email -->
               <div class="mb-2">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" [(ngModel)]="model.email" #email="ngModel"
                   autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'is-invalid':dealerloginForm.submitted && email.invalid}">
               </div>
 
@@ -22,7 +22,7 @@
               <!-- Password -->
               <div class="mb-2">
                 <label>Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+                <input type="password" class="form-control" name="password" placeholder="Enter Password"[(ngModel)]="model.password" #password="ngModel"
                   autocomplete="off" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [ngClass]="{'is-invalid':dealerloginForm.submitted && password.invalid}">
               </div>
 

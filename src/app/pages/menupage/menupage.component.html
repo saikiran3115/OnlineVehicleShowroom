@@ -27,7 +27,7 @@
                     <!-- CustomerName -->
               <div class="mb-2">
                 <label>Customer Name</label>
-                <input type="text" class="form-control" name="customerName" [(ngModel)]="model.customerName" #name="ngModel"
+                <input type="text" class="form-control" name="customerName" placeholder="Enter Customer Name" [(ngModel)]="model.customerName" #name="ngModel"
                   autocomplete="off" required minlength="3" [ngClass]="{'is-invalid':testdriveForm.submitted && name.invalid}">
               </div>
 
@@ -40,7 +40,7 @@
               <!-- Email -->
               <div class="mb-2">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" [(ngModel)]="model.email" #email="ngModel"
                   autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'is-invalid':testdriveForm.submitted && email.invalid}">
               </div>
 
@@ -53,7 +53,7 @@
                     <!-- Password -->
                     <div class="mb-2">
                       <label>Password</label>
-                      <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+                      <input type="password" class="form-control" name="password" placeholder="Enter Password" [(ngModel)]="model.password" #password="ngModel"
                         autocomplete="off" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [ngClass]="{'is-invalid':testdriveForm.submitted && password.invalid}">
                     </div>
 
@@ -66,8 +66,7 @@
                     <!-- choose Showroom -->
               <div class="mb-2">
                 <label>Choose Showroom</label>
-                <select class="form-select" name="showroom" [(ngModel)]="model.showroom" required #showroom="ngModel">
-                  <option disabled selected value="">Please select</option>
+                <select class="form-select" name="showroom" placeholder="Choose Showroom" [(ngModel)]="model.showroom" required #showroom="ngModel">
                   <option *ngFor="let showroom of showrooms" [ngValue]="showroom"> {{showroom}} </option>
                 </select>
               </div>

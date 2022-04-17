@@ -18,13 +18,6 @@ export class DealerloginComponent implements OnInit {
   }
   onloginclick(){
     this.router.navigateByUrl('/dealermenu');
+    alert("Dealer Login Successful");
 }
-  onSubmit(dealer: any) {
-    if (dealer.valid) {
-      console.log(dealer.value);
-      console.log(dealer.value.dealerName);
-      alert("Login Successful" + JSON.stringify(dealer.value, null, 4));
-    }
-}
-
 }

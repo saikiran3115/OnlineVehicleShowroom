@@ -14,6 +14,7 @@ import { DealermenuComponent } from './pages/dealermenu/dealermenu.component';
 import { DealermenupageComponent } from './pages/dealermenupage/dealermenupage.component';
 import { DealershowroomsComponent } from './pages/dealershowrooms/dealershowrooms.component';
 import { DealershowroompageComponent } from './pages/dealershowroompage/dealershowroompage.component';
+import { AddnewcarComponent } from './pages/addnewcar/addnewcar.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
   {path:'dealershowrooms',component:DealershowroomsComponent},
-  {path:'dealershowroompage',component:DealershowroompageComponent}
+  {path:'dealershowroompage',component:DealershowroompageComponent},
+  {path:'addnewcar',component:AddnewcarComponent}
 
 
 

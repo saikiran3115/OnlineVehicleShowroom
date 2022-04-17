@@ -1,24 +1,34 @@
-<div class="container mt-5 mb-5">
+<div class="border">
+</div>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>vehicleName</th>
+      <th>vehicleModel</th>
+      <th>vehicleDetails</th>
+      <th>vehicleAvailablility</th>
+      <th>vehicleCost</th>
+      <th>Edit</th>
+      <th>Delete</th>
 
-  <div class="row">
-
-      <div class="col-lg-4" *ngFor="let vd of vehicleData">
-
-          <div class="carbox mt-3 mb-3">
-              <img src="{{vd.vehicleImg}}">
-              <h1>{{vd.vehicleName}}</h1>
-              <h1>{{vd.vehicleModel}}</h1>
-              <p>{{vd.vehicleDetails}}</p>
-              <h1>{{vd.vehicleAvailablility}}</h1>
-              <p>{{vd.vehicleCost | currency:'INR'}}</p>
-              <br/>
-              <a class="buybtn" routerLink="/dealermenupage">Edit Vehicle Details &nbsp;<i class="bi bi-pencil-square"></i></a>
-          </div>
-
-      </div>
-
-
-
-  </div>
-
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vd of vehicleData">
+      <td><span>{{vd.vehicleName}}</span></td>
+      <td><span>{{vd.vehicleModel}}</span></td>
+      <td><span>{{vd.vehicleDetails}}</span></td>
+      <td><span>{{vd.vehicleAvailability}}</span></td>
+      <td><span>{{vd.vehicleCost | currency:'INR'}}</span></td>
+      <td>
+        <button type="submit" class="btn btn-sm btn-warning" (click)="oneditclick()">Edit</button>
+        </td>
+        <td>
+        <button class="btn btn-sm btn-danger">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+    <button type="submit" class="btn btn-outline-dark" (click)="onnewcarclick()">New Car</button>
+  </table>
 </div>

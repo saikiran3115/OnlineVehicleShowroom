@@ -19,13 +19,6 @@ export class LoginComponent implements OnInit {
     }
     onloginclick(){
       this.router.navigateByUrl('');
+      alert("Login Successful");
   }
-    onSubmit(customer: any) {
-      if (customer.valid) {
-        console.log(customer.value);
-        console.log(customer.value.customerName);
-        alert("Login Successful" + JSON.stringify(customer.value, null, 4));
-      }
   }
-
-}
